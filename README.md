@@ -21,17 +21,18 @@
 - ![Image text](Xmind/ZookeeperXmind.png)
 
 ## Zookeeper Basic Principle
+    
+- 1.Zookeeper的数据模型：https://github.com/2462612540/ZookeeperPrinciple/blob/master/BasicPrinciple/ZooKeeper%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B.md
+- 2.Zookeeper的ACL权限控制：https://github.com/2462612540/ZookeeperPrinciple/blob/master/BasicPrinciple/Zookeeper%E7%9A%84ACL%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6.md
+- 3.Zookeeper的Watch机制原理：https://github.com/2462612540/ZookeeperPrinciple/blob/master/BasicPrinciple/Zookeeper%E7%9A%84Watch%E6%9C%BA%E5%88%B6%E5%8E%9F%E7%90%86.md
+- 4.Zookeeper的序列化和反序列化：https://github.com/2462612540/ZookeeperPrinciple/blob/master/BasicPrinciple/Zookeeper%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.md
+- 5.Zookeeper的通信原理：https://github.com/2462612540/ZookeeperPrinciple/blob/master/BasicPrinciple/Zookeeper%E7%9A%84%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86.md
+- 6.Zookeeper的事务与非事务请求处理原理：https://github.com/2462612540/ZookeeperPrinciple/blob/master/BasicPrinciple/Zookeeper%E7%9A%84%E4%BA%8B%E5%8A%A1%E4%B8%8E%E9%9D%9E%E4%BA%8B%E5%8A%A1%E8%AF%B7%E6%B1%82%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86.md
+- 7.Zookeeper的一致性原理：https://github.com/2462612540/ZookeeperPrinciple/blob/master/BasicPrinciple/Zookeeper%E7%9A%84%E4%B8%80%E8%87%B4%E6%80%A7%E5%8E%9F%E7%90%86.md
+- 8.Zookeeper的选举机制原理：https://github.com/2462612540/ZookeeperPrinciple/blob/master/BasicPrinciple/Zookeeper%E7%9A%84%E9%80%89%E4%B8%BE%E6%9C%BA%E5%88%B6%E5%8E%9F%E7%90%86.md
+- 9.Zookeeper的集群原理与构建：https://github.com/2462612540/ZookeeperPrinciple/blob/master/BasicPrinciple/Zookeeper%E7%9A%84%E9%9B%86%E7%BE%A4%E5%8E%9F%E7%90%86%E4%B8%8E%E6%9E%84%E5%BB%BA.md
+- 10.Zookeeper的分布式锁原理：https://github.com/2462612540/ZookeeperPrinciple/blob/master/BasicPrinciple/Zookeeper%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%8E%9F%E7%90%86.md
 
-- 1.Zookeeper的数据模型
-- 2.Zookeeper的ACL权限控制
-- 3.Zookeeper的Watch机制原理
-- 4.Zookeeper的序列化和反序列化
-- 5.Zookeeper的通信原理
-- 6.Zookeeper的事务与非事务请求处理原理
-- 7.Zookeeper的一致性原理
-- 8.Zookeeper的选举机制原理
-- 9.Zookeeper的集群原理与构建
-- 10.Zookeeper的分布式锁原理
 ## Zookeeper Source Code Analysis
 - https://github.com/2462612540/ZookeeperPrinciple
 
