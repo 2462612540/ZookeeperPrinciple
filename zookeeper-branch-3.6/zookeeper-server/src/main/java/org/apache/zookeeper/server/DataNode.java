@@ -19,22 +19,25 @@
 package org.apache.zookeeper.server;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
 import org.apache.jute.InputArchive;
 import org.apache.jute.OutputArchive;
 import org.apache.jute.Record;
 import org.apache.zookeeper.data.Stat;
 import org.apache.zookeeper.data.StatPersisted;
 
+import java.io.IOException;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.TimeUnit;
+
 /**
  * This class contains the data for a node in the data tree.
  * <p>
  * A data node contains a reference to its parent, a byte array as its data, an
  * array of ACLs, a stat object, and a set of its children's paths.
- *
+ * 实现的序列化和反序列化的接口方法
  */
 @SuppressFBWarnings({"EI_EXPOSE_REP", "EI_EXPOSE_REP2"})
 public class DataNode implements Record {
@@ -46,7 +49,9 @@ public class DataNode implements Record {
     // optimize the performance.
     volatile boolean digestCached;
 
-    /** the data for this datanode */
+    /**
+     * the data for this datanode
+     */
     byte[] data;
 
     /**
@@ -78,12 +83,9 @@ public class DataNode implements Record {
     /**
      * create a DataNode with parent, data, acls and stat
      *
-     * @param data
-     *            the data to be set
-     * @param acl
-     *            the acls for this node
-     * @param stat
-     *            the stat for this node.
+     * @param data the data to be set
+     * @param acl  the acls for this node
+     * @param stat the stat for this node.
      */
     public DataNode(byte[] data, Long acl, StatPersisted stat) {
         this.data = data;
@@ -94,8 +96,7 @@ public class DataNode implements Record {
     /**
      * Method that inserts a child into the children set
      *
-     * @param child
-     *            to be inserted
+     * @param child to be inserted
      * @return true if this set did not already contain the specified element
      */
     public synchronized boolean addChild(String child) {
@@ -132,7 +133,7 @@ public class DataNode implements Record {
      * convenience methods to get the children
      *
      * @return the children of this datanode. If the datanode has no children, empty
-     *         set is returned
+     * set is returned
      */
     public synchronized Set<String> getChildren() {
         if (children == null) {
@@ -171,6 +172,14 @@ public class DataNode implements Record {
         return stat.getEphemeralOwner();
     }
 
+    /**
+     * @description 反序列化
+     * @param: archive
+     * @param: tag
+     * @date: 2021/12/23 22:46
+     * @return: void
+     * @author: xjl
+     */
     public synchronized void deserialize(InputArchive archive, String tag) throws IOException {
         archive.startRecord("node");
         data = archive.readBuffer("data");
@@ -180,6 +189,14 @@ public class DataNode implements Record {
         archive.endRecord("node");
     }
 
+    /**
+     * @description 序列化
+     * @param: archive
+     * @param: tag
+     * @date: 2021/12/23 22:46
+     * @return: void
+     * @author: xjl
+     */
     public synchronized void serialize(OutputArchive archive, String tag) throws IOException {
         archive.startRecord(this, "node");
         archive.writeBuffer(data, "data");
@@ -207,5 +224,6 @@ public class DataNode implements Record {
     public synchronized byte[] getData() {
         return data;
     }
+
 
 }

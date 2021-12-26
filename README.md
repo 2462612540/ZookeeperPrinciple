@@ -18,18 +18,29 @@
 ## Zookeeper Xmind
 
 - zookeeper图书资源.txt
-
+- ![Image text](Xmind/ZookeeperXmind.png)
 
 ## Zookeeper Basic Principle
 
-- 1.Zookeeper整体系统架构原理
-
-
+- 1.Zookeeper的数据模型
+- 2.Zookeeper的ACL权限控制
+- 3.Zookeeper的Watch机制原理
+- 4.Zookeeper的序列化和反序列化
+- 5.Zookeeper的通信原理
+- 6.Zookeeper的事务与非事务请求处理原理
+- 7.Zookeeper的一致性原理
+- 8.Zookeeper的选举机制原理
+- 9.Zookeeper的集群原理与构建
+- 10.Zookeeper的分布式锁原理
 ## Zookeeper Source Code Analysis
 - https://github.com/2462612540/ZookeeperPrinciple
 
 ## Zookeeper Interview Questions
-
+- 分布式锁问题：https://blog.csdn.net/weixin_41605937/article/details/122151722?spm=1001.2014.3001.5501
+- 服务注册与订阅（共用节点）
+- 分布式通知（监听znode）
+- 服务命名（znode特性）
+- 数据订阅、发布（watcher）
 
 
 # Project Summary

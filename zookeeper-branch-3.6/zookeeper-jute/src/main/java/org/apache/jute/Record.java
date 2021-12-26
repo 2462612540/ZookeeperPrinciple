@@ -22,7 +22,7 @@ import java.io.IOException;
 import org.apache.yetus.audience.InterfaceAudience;
 
 /**
- * Interface that is implemented by generated classes.
+ * Zookeeper的序列化接口
  */
 @InterfaceAudience.Public
 public interface Record {
